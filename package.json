@@ -1,0 +1,26 @@
+{
+  "name": "fechas-bitacora-sofiagonzalezgallego",
+  "version": "1.0.0",
+  "description": "Utilidades de fecha (timestamp, fecha larga y fecha corta) para la bitácora de aprendizaje por consola del taller 3406211.",
+  "main": "src/index.js",
+  "files": [
+    "src/"
+  ],
+  "scripts": {
+    "demo": "node ejemplo.js"
+  },
+  "keywords": [
+    "fechas",
+    "date",
+    "timestamp",
+    "bitacora",
+    "nodejs",
+    "sena"
+  ],
+  "author": "Aprendiz SENA - Ficha 3406211",
+  "license": "MIT",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=20.12"
+  }
+}
