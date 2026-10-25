@@ -1,5 +1,8 @@
+
+const fs = require('fs'); // AGREGADO: módulo para guardar archivos
+
 // ========================================
-// fechas-bitacora-3406211
+// fechas-bitacora-3406204
 // Paquete CommonJS de utilidades de fecha
 // ========================================
 //
@@ -77,8 +80,32 @@ function getShortDate(locale = 'es-ES', timestamp = Date.now()) {
   return aFecha(timestamp).toLocaleDateString(locale, opciones);
 }
 
+// AGREGADO: guardar las fechas en un archivo
+function guardarFechas(fechaLarga, fechaCorta) {
+  const contenido =
+    `Fecha larga: ${fechaLarga}\n` +
+    `Fecha corta: ${fechaCorta}\n\n`;
+
+  fs.appendFileSync('fechas.txt', contenido, 'utf8');
+}
+
+// AGREGADO: obtener y guardar las fechas actuales
+function mostrarYGuardarFechas() {
+  const timestamp = getTimeStamp();
+
+  const fechaLarga = getLongTime('es-ES', timestamp);
+  const fechaCorta = getShortDate('es-ES', timestamp);
+
+  console.log('Fecha larga:', fechaLarga);
+  console.log('Fecha corta:', fechaCorta);
+
+  guardarFechas(fechaLarga, fechaCorta);
+}
+
 module.exports = {
   getTimeStamp,
   getLongTime,
-  getShortDate
+  getShortDate,
+  guardarFechas,
+  mostrarYGuardarFechas
 };
